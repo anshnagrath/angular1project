@@ -1,0 +1,225 @@
+    <div class="row">
+        <form class="row">
+            <div class="col-xs-6 col-sm-4 col-md-4 form-group"> 
+                <label for="filter1">Search by Round</label>
+                <input type="text" name="list" placeholder="Enter Round" ng-model="filter1['name']"/><br/><br/>
+            </div>
+            <div class="col-xs-6 col-sm-4 col-md-4 form-group"> 
+                <label for="filter2">Search by Team 1</label>
+                <input type="text" name="matches" placeholder="Enter Team1" ng-model="filter2['matches']['team1']['name']"/><br/><br/>
+            </div>
+            <div class="col-xs-6 col-sm-4 col-md-4 form-group">
+                <label for="filter3">Search Team 2</label>
+                <input type="text" name="matches" placeholder="Enter Team2" ng-model="filter3['matches']['team2']['name']"/><br/><br/>
+            </div>
+            <div class="col-xs-6 col-sm-4 col-md-4 form-group">
+                <label for="filter4">Search by Date(yyyy-mm-dd)</label>
+                <input type="text" name="matches" placeholder="Enter Date" ng-model="filter4['matches']['date']"/><br/><br/>
+            </div>
+            <div class="col-xs-6 col-sm-4 col-md-4 form-group">
+                <label for="filter5">Search by Score of team1</label>
+                <input type="text" name="matches" placeholder="Enter Date" ng-model="filter5['matches']['score1']"/><br/><br/>
+            </div>
+            <div class="col-xs-6 col-sm-4 col-md-4 form-group">
+                <label for="filter6">Search by Score of Team2</label>
+                <input type="text" name="matches" placeholder="Enter Date" ng-model="filter6['matches']['score2']"/><br/><br/>
+            </div>
+        
+        </form>
+
+
+        
+        <h2 style="text-align:center"> Rounds being played in the League 2015-2016:</h2>
+        <br>    
+    </br>
+    <!-- <select style="text-align: right" ng-model="selectedName" ng-options="x for x in names"></select> -->
+            
+    <div  class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1"  >
+                   
+                    <div style="text-align:center" class="post-preview"  ng-repeat="list in list |filter : filter1 | filter : filter2 | filter : filter3 | filter : filter4 | filter : filter5 | filter : filter6">
+                        <a style="color:black"  ng-click="getIndex($index)" ng-href='#/singleview'  > 
+                            <!-- <a ng-href="#" >   -->
+                        <h3> ==>>{{list.name}}</h3>
+            <h2 style="text-align:center">Match 1</h2>
+    
+    
+            <h4>{{list['matches'][0]['team1']['name']}} vs {{list['matches'][0]['team2']['name']}}</h4>
+            <h4>  Date:&#8192{{list['matches'][0]['date'] | date:'medium'}}</h4>
+            <h4> Score by both the teams:</h4>
+            <h4>{{list['matches'][0]['team1']['name']}}:{{list['matches'][0]['score1']}} &#8192 &#8192{{list['matches'][0]['team2']['name']}}:{{list['matches'][0]['score2']}}</h4>
+            
+            <br></br>
+            <h2 style="text-align:center">Match 2</h2>
+        
+            <h4>{{list['matches'][1]['team1']['name']}} vs {{list['matches'][1]['team2']['name']}}</h4>
+            <h4>     Date:&#8192{{list['matches'][1]['date'] | date:'medium'}}</h4>
+            <h4> Score by both the teams:</h4>
+            <h4>{{list['matches'][1]['team1']['name']}}:{{list['matches'][1]['score1']}}&#8192{{list['matches'][1]['team2']['name']}}:{{list['matches'][1]['score2']}}</h4>
+            
+
+            <br></br>
+            <h2 style="text-align:center">Match 3</h2>
+        
+            
+            <h4>{{list['matches'][2]['team1']['name']}} vs {{list['matches'][2]['team2']['name']}}    </h4>
+            <h4>     Date:&#8192{{list['matches'][2]['date'] | date:'medium'}}</h4>
+            <h4> Score by both the teams:</h4>
+            <h4>{{list['matches'][2]['team1']['name']}}:{{list['matches'][2]['score1']}} &#8192{{list['matches'][2]['team2']['name']}}:{{list['matches'][2]['score2']}}</h4>
+            
+
+            <br></br>
+            <h2 style="text-align:center">Match 4</h2>
+        
+            <h4>{{list['matches'][3]['team1']['name']}} vs {{list['matches'][3]['team2']['name']}}    </h4>
+            <h4>     Date:&#8192{{list['matches'][3]['date'] | date:'medium'}}</h4>
+            <h4> Score by both the teams:</h4>
+            <h4>{{list['matches'][3]['team1']['name']}}:{{list['matches'][3]['score1']}} &#8192 {{list['matches'][3]['team2']['name']}}:{{list['matches'][3]['score2']}}</h4>
+            
+
+            <br></br>
+            <h2 style="text-align:center">Match 5</h2>
+            
+            <h4>{{list['matches'][4]['team1']['name']}} vs {{list['matches'][4]['team2']['name']}}    </h4>
+        
+            <h4>     Date:&#8192{{list['matches'][4]['date'] | date:'medium'}}</h4>
+            <h4> Score by both the teams:</h4>
+            <h4>{{list['matches'][4]['team1']['name']}}:{{list['matches'][4]['score1']}} &#8192 {{list['matches'][4]['team2']['name']}}:{{list['matches'][4]['score2']}}</h4>
+            <br></br>
+            <h2 style="text-align:center">Match 6</h2>
+            
+            <h4>{{list['matches'][5]['team1']['name']}} vs {{list['matches'][5]['team2']['name']}}    </h4>
+            <h4>     Date:&#8192{{list['matches'][5]['date'] | date:'medium'}}</h4>
+            <h4> Score by both the teams:</h4>
+            <h4>{{list['matches'][5]['team1']['name']}}:{{list['matches'][5]['score1']}}&#8192 {{list['matches'][5]['team2']['name']}}:{{list['matches'][5]['score2']}}</h4>
+            <br></br>
+            <h2 style="text-align:center">Match 7</h2>
+            <h4>{{list['matches'][6]['team1']['name']}} vs {{list['matches'][6]['team2']['name']}}    </h4>
+            <h4> Score by both the teams:</h4>
+            <h4>Date:&#8192{{list['matches'][6]['date'] | date:'medium'}}</h4>
+
+            <h4>{{list['matches'][6]['team1']['name']}}:{{list['matches'][6]['score1']}}&#8192{{list['matches'][6]['team2']['name']}}:{{list['matches'][6]['score2']}}</h4>
+                
+                <br></br>
+                <h2 style="text-align:center">Match 8</h2>
+                
+            <h4>{{list['matches'][7]['team1']['name']}} vs {{list['matches'][7]['team2']['name']}}    </h4>
+            <h4>     Date:&#8192{{list['matches'][7]['date'] | date:'medium'}}</h4>
+        
+            <h4>{{list['matches'][7]['team1']['name']}}:{{list['matches'][7]['score1']}}&#8192{{list['matches'][7]['team2']['name']}}:{{list['matches'][7]['score2']}}</h4>
+            <h4> Score by both the teams:</h4>
+            <h2 style="text-align:center">Match 9</h2>
+            <br></br>
+            
+            <h4>{{list['matches'][8]['team1']['name']}} vs {{list['matches'][8]['team2']['name']}}    </h4>
+            
+            <h4>     Date:&#8192{{list['matches'][8]['date'] | date:'medium'}}</h4>
+            <h4> Score by both the teams:</h4>
+            <h4>{{list['matches'][8]['team1']['name']}}:{{list['matches'][8]['score1']}}&#8192{{list['matches'][8]['team2']['name']}}:{{list['matches'][8]['score2']}}</h4>
+            <br></br>
+            <h2 style="text-align:center">Match 10</h2>
+            
+            <h4>{{list['matches'][9]['team1']['name']}} vs {{list['matches'][9]['team2']['name']}}    </h4>
+            <h4>     Date:&#8192{{list['matches'][9]['date'] | date:'medium'}}</h4>
+        
+            <h4> Score by both the teams:</h4>
+            <h4>{{list['matches'][9]['team1']['name']}}:{{list['matches'][9]['score1']}}&#8192{{list['matches'][9]['team2']['name']}}:{{list['matches'][9]['score2']}}</h4>
+            <br></br>   
+        
+        </div>
+
+    </a>
+    
+    <div class="container" class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <h2 style="text-align:center"  >  Rounds played in the league 2016-2017 </h2>         
+        <div  style="text-align:center" class="post-preview" ng-repeat="store in store | filter : filter2 | filter : filter1 | filter : filter3 | filter : filter4 | filter : filter5 | filter : filter6">
+        
+            
+            <h3> ==>>{{store.name}}</h3>
+            <h2 style="text-align:center">Match 1</h2>
+    
+    
+            <h4>{{store['matches'][0]['team1']['name']}} vs {{store['matches'][0]['team2']['name']}}</h4>
+            <h4>  Date:&#8192{{store['matches'][0]['date'] | date:'medium'}}</h4>
+            <h4> Score by both the teams:</h4>
+            <h4>{{store['matches'][0]['team1']['name']}}:{{store['matches'][0]['score1']}} &#8192 &#8192{{store['matches'][0]['team2']['name']}}:{{store['matches'][0]['score2']}}</h4>
+            
+            <br></br>
+            <h2 style="text-align:center">Match 2</h2>
+        
+            <h4>{{store['matches'][1]['team1']['name']}} vs {{store['matches'][1]['team2']['name']}}</h4>
+            <h4>     Date:&#8192{{store['matches'][1]['date'] | date:'medium'}}</h4>
+            <h4> Score by both the teams:</h4>
+            <h4>{{store['matches'][1]['team1']['name']}}:{{store['matches'][1]['score1']}}&#8192{{store['matches'][1]['team2']['name']}}:{{store['matches'][1]['score2']}}</h4>
+            
+
+            <br></br>
+            <h2 style="text-align:center">Match 3</h2>
+         
+            
+            <h4>{{store['matches'][2]['team1']['name']}} vs {{store['matches'][2]['team2']['name']}}    </h4>
+            <h4>     Date:&#8192{{store['matches'][2]['date'] | date:'medium'}}</h4>
+            <h4> Score by both the teams:</h4>
+            <h4>{{store['matches'][2]['team1']['name']}}:{{store['matches'][2]['score1']}} &#8192{{store['matches'][2]['team2']['name']}}:{{store['matches'][2]['score2']}}</h4>
+            
+
+            <br></br>
+            <h2 style="text-align:center">Match 4</h2>
+        
+            <h4>{{store['matches'][3]['team1']['name']}} vs {{store['matches'][3]['team2']['name']}}    </h4>
+            <h4>     Date:&#8192{{store['matches'][3]['date'] | date:'medium'}}</h4>
+            <h4> Score by both the teams:</h4>
+            <h4>{{store['matches'][3]['team1']['name']}}:{{store['matches'][3]['score1']}} &#8192 {{store['matches'][3]['team2']['name']}}:{{store['matches'][3]['score2']}}</h4>
+            
+
+            <br></br>
+            <h2 style="text-align:center">Match 5</h2>
+            
+            <h4>{{store['matches'][4]['team1']['name']}} vs {{store['matches'][4]['team2']['name']}}    </h4>
+        
+            <h4>     Date:&#8192{{store['matches'][4]['date'] | date:'medium'}}</h4>
+            <h4> Score by both the teams:</h4>
+            <h4>{{store['matches'][4]['team1']['name']}}:{{store['matches'][4]['score1']}} &#8192 {{store['matches'][4]['team2']['name']}}:{{store['matches'][4]['score2']}}</h4>
+            <br></br>
+            <h2 style="text-align:center">Match 6</h2>
+            
+            <h4>{{store['matches'][5]['team1']['name']}} vs {{store['matches'][5]['team2']['name']}}    </h4>
+            <h4>     Date:&#8192{{store['matches'][5]['date'] | date:'medium'}}</h4>
+            <h4> Score by both the teams:</h4>
+            <h4>{{store['matches'][5]['team1']['name']}}:{{store['matches'][5]['score1']}}&#8192 {{store['matches'][5]['team2']['name']}}:{{store['matches'][5]['score2']}}</h4>
+            <br></br>
+            <h2 style="text-align:center">Match 7</h2>
+            <h4>{{store['matches'][6]['team1']['name']}} vs {{store['matches'][6]['team2']['name']}}    </h4>
+            <h4> Score by both the teams:</h4>
+            <h4>Date:&#8192{{store['matches'][6]['date'] | date:'medium'}}</h4>
+
+            <h4>{{store['matches'][6]['team1']['name']}}:{{store['matches'][6]['score1']}}&#8192{{store['matches'][6]['team2']['name']}}:{{store['matches'][6]['score2']}}</h4>
+                
+                <br></br>
+                <h2 style="text-align:center">Match 8</h2>
+                
+            <h4>{{store['matches'][7]['team1']['name']}} vs {{store['matches'][7]['team2']['name']}}    </h4>
+            <h4>     Date:&#8192{{store['matches'][7]['date'] | date:'medium'}}</h4>
+        
+            <h4>{{store['matches'][7]['team1']['name']}}:{{store['matches'][7]['score1']}}&#8192{{store['matches'][7]['team2']['name']}}:{{store['matches'][7]['score2']}}</h4>
+            <h4> Score by both the teams:</h4>
+            <h2 style="text-align:center">Match 9</h2>
+            <br></br>
+            
+            <h4>{{store['matches'][8]['team1']['name']}} vs {{store['matches'][8]['team2']['name']}}    </h4>
+            
+            <h4>     Date:&#8192{{store['matches'][8]['date'] | date:'medium'}}</h4>
+            <h4> Score by both the teams:</h4>
+            <h4>{{store['matches'][8]['team1']['name']}}:{{store['matches'][8]['score1']}}&#8192{{store['matches'][8]['team2']['name']}}:{{store['matches'][8]['score2']}}</h4>
+            <br></br>
+            <h2 style="text-align:center">Match 10</h2>
+            
+            <h4>{{store['matches'][9]['team1']['name']}} vs {{store['matches'][9]['team2']['name']}}    </h4>
+            <h4>     Date:&#8192{{store['matches'][9]['date'] | date:'medium'}}</h4>
+        
+            <h4> Score by both the teams:</h4>
+            <h4>{{store['matches'][9]['team1']['name']}}:{{store['matches'][9]['score1']}}&#8192{{store['matches'][9]['team2']['name']}}:{{store['matches'][9]['score2']}}</h4>
+            <br></br>   
+        <!-- </a> -->
+
+    </div>
+
