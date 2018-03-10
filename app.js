@@ -44,7 +44,7 @@ return $scope.list;
 
 $scope.store=response.data.rounds;
 
-console.log($scope.store,'========>>>>>')
+console.log($scope.store,'secound response========>>>>>')
 
 // console.log(obj,'======>>>>'  )
 
